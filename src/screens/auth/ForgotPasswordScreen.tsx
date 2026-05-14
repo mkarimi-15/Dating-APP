@@ -44,7 +44,7 @@ export function ForgotPassword() {
              </View>
              <Button
              label="NEXT"
-             onPress={() => {}}
+             onPress={() => router.push('/otp')}
              style={styles.button}
              />
 
