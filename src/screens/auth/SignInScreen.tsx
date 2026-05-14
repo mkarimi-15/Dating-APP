@@ -62,7 +62,7 @@ export function SignInScreen() {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.header}>
-          <Text style={styles.logo}>💕</Text>
+          <Text style={styles.logo}></Text>
           <Text style={styles.title}>Welcome back</Text>
           <Text style={styles.subtitle}>
             Sign in to continue finding your match
@@ -102,8 +102,13 @@ export function SignInScreen() {
             )}
           />
 
-          <TouchableOpacity style={styles.forgotPassword}>
-            <Text style={styles.forgotPasswordText}>Forgot password?</Text>
+          <TouchableOpacity
+           style={styles.forgotPassword}
+           onPress={() => router.push('/forgot-password')}
+           >
+           <Text style={styles.forgotPasswordText}>
+            Forgot password?
+           </Text>
           </TouchableOpacity>
 
           <Button
