@@ -40,11 +40,12 @@ export default function VerifyOtp() {
             key={index}
             value={item}
             onChangeText={(text) => {
+              const digit = text.replace(/[^0-9]/g, '').slice(0, 1);
               const newCode = [...code];
-              newCode[index] = text;
+              newCode[index] = digit;
               setCode(newCode);
             }}
-            keyboardType="number-pad"
+            keyboardType="numeric"
             maxLength={1}
             style={styles.input}
           />
