@@ -61,7 +61,7 @@ export default function VerifyOtp() {
 
         <Button
           label="Verify"
-          onPress={() => {}}
+          onPress={() => router.push('/about')}
           style={styles.smallButton}
         />
       </View>
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   buttonRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    gap: 16,
+    gap: 30,
   },
 
   smallButton: {

@@ -4,23 +4,14 @@ import {
   View,
   Text,
   StyleSheet,
-  ScrollView,
-  KeyboardAvoidingView,
-  Platform,
   TouchableOpacity,
 } from 'react-native';
 
 import { useRouter } from 'expo-router';
-
 import { TextInput } from '@/components/ui/TextInput';
 import { Button } from '@/components/ui/Button';
 
-import {
-  Colors,
-  Fonts,
-  Spacing,
-  BorderRadius,
-} from '@/constants/theme';
+
 export function ForgotPassword() {
     const router = useRouter();
 
@@ -44,7 +35,7 @@ export function ForgotPassword() {
              </View>
              <Button
              label="NEXT"
-             onPress={() => router.push('/otp')}
+             onPress={() => router.push('/(auth)/otp')}
              style={styles.button}
              />
 

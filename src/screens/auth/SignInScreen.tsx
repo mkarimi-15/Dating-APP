@@ -54,13 +54,13 @@ export function SignInScreen() {
     <KeyboardAvoidingView
       style={styles.flex}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-    >
+     >
       <ScrollView
         style={styles.flex}
         contentContainerStyle={styles.scrollContent}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
-      >
+       >
         <View style={styles.header}>
           <Text style={styles.logo}></Text>
           <Text style={styles.title}>Welcome back</Text>
@@ -104,7 +104,7 @@ export function SignInScreen() {
 
           <TouchableOpacity
            style={styles.forgotPassword}
-           onPress={() => router.push('/forgot-password')}
+           onPress={() => router.push('/(auth)/forgot-password')}
            >
            <Text style={styles.forgotPasswordText}>
             Forgot password?
@@ -132,7 +132,7 @@ export function SignInScreen() {
         </View>
 
         <View style={styles.footer}>
-          <Text style={styles.footerText}>Don't have an account? </Text>
+          <Text style={styles.footerText}>Don&apos;t have an account? </Text>
           <TouchableOpacity onPress={() => router.push('/(auth)/sign-up')}>
             <Text style={styles.footerLink}>Sign Up</Text>
           </TouchableOpacity>
