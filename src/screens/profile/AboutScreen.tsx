@@ -51,7 +51,7 @@ export function AboutScreen() {
     <View>
       <Image
         style={styles.image}
-        source={require('../../assets/images/images.png')}
+        source={require('../../../assets/images/images.png')}
       />
     </View>
 
@@ -169,6 +169,7 @@ export function AboutScreen() {
     marginTop: 16,
   }}
 >
+
   {lookingFor.map((item, index) => (
     <TouchableOpacity
       key={index}
@@ -270,42 +271,6 @@ export function AboutScreen() {
   </View>
 </LinearGradient>
 </LinearGradient>
-   
-    <LinearGradient
-      colors={['#FAECEC', '#F1CACA']}
-      style={styles.menu}
-    >
-      <TouchableOpacity style={styles.menuItem}>
-        <View style={styles.activeMenu}>
-          <Ionicons
-            name="person"
-            size={24}
-            color="#F1CACA"
-          />
-          <Text style={styles.menuTextActive}>About</Text>
-        </View>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.menuItem}>
-        <View>
-          <Ionicons
-            name="document-text-outline"
-            size={28}
-            color="#7A3A00"
-          />
-          <Text style={styles.menuTextActive}>Detail</Text>
-        </View>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.filtersItem}>
-        <Ionicons
-          name="filter-outline"
-          size={28}
-          color="#7A3A00"
-        />
-        <Text style={styles.filtersTextActive}>Filters</Text>
-      </TouchableOpacity>
-    </LinearGradient>
 
     {/* Button */}
     <TouchableOpacity style={styles.button}>
