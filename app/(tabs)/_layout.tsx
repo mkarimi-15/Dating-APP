@@ -7,25 +7,21 @@ import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-na
 import { BorderRadius, Colors, Fonts, Spacing } from '@/constants/theme';
 
 const TAB_CONFIG = {
-  index: {
-    label: 'Discover',
-    icon: 'flame-outline',
-    activeIcon: 'flame',
-  },
-  matches: {
-    label: 'Matches',
-    icon: 'heart-outline',
-    activeIcon: 'heart',
-  },
+
   profile: {
     label: 'Profile',
     icon: 'person-outline',
     activeIcon: 'person',
   },
-  about: {
-    label: 'About',
+  details: {
+    label: 'Details',
     icon: 'document-text-outline',
     activeIcon: 'document-text',
+  },
+  filters: {
+    label: 'filters',
+    icon: 'flame-outline',
+    activeIcon: 'flame',
   },
 } as const;
 
@@ -47,12 +43,17 @@ function CustomTabBar({ state, descriptors, navigation, insets }: BottomTabBarPr
     >
       <LinearGradient colors={['#FAECEC', '#F1CACA']} style={styles.sidebar}>
         <View style={styles.items}>
-          {state.routes.map((route, index) => {
+           {state.routes.map((route, index) => {
             const isFocused = state.index === index;
             const descriptor = descriptors[route.key];
             const options = descriptor.options;
+            console.log('ROUTE NAME:', route.name);
             const tab = TAB_CONFIG[route.name as keyof typeof TAB_CONFIG];
 
+            if (!tab) {
+            console.log('TAB NOT FOUND:', route.name);
+            return null;
+            }
             const onPress = () => {
               const event = navigation.emit({
                 type: 'tabPress',
@@ -86,7 +87,7 @@ function CustomTabBar({ state, descriptors, navigation, insets }: BottomTabBarPr
                   pressed && styles.itemPressed,
                 ]}
               >
-                <View style={[styles.itemInner, isFocused && styles.itemInnerActive]}>
+                <View style={[styles.itemInner]}>
                   <View style={[styles.iconWrap, isFocused && styles.iconWrapActive]}>
                     <Ionicons
                       name={isFocused ? tab.activeIcon : tab.icon}
@@ -100,7 +101,7 @@ function CustomTabBar({ state, descriptors, navigation, insets }: BottomTabBarPr
                 </View>
               </Pressable>
             );
-          })}
+})}
         </View>
       </LinearGradient>
     </View>
@@ -116,10 +117,9 @@ export default function TabsLayout() {
         tabBarPosition: 'left',
       }}
     >
-      <Tabs.Screen name="index" />
-      <Tabs.Screen name="matches" />
       <Tabs.Screen name="profile" />
-      <Tabs.Screen name="about" />
+      <Tabs.Screen name="details" />
+      <Tabs.Screen name="filters" /> 
     </Tabs>
   );
 }
@@ -129,14 +129,16 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
   },
   sidebar: {
-    flex: 1,
+    flex: 0.61,
     borderRadius: BorderRadius.xl,
     paddingHorizontal: Spacing.sm,
     paddingVertical: Spacing.md,
     justifyContent: 'flex-end',
+    marginTop: 'auto',
   },
   items: {
-    gap: Spacing.sm,
+    gap: 80,
+    paddingBottom: 50, 
   },
   itemPressable: {
     borderRadius: BorderRadius.lg,
