@@ -62,7 +62,7 @@ export function SignUpScreen() {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.header}>
-          <Text style={styles.logo}>💕</Text>
+          <Text style={styles.logo}></Text>
           <Text style={styles.title}>Create account</Text>
           <Text style={styles.subtitle}>
             Join thousands finding meaningful connections
