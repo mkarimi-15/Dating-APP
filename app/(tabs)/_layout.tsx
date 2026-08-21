@@ -119,7 +119,7 @@ export default function TabsLayout() {
     >
       <Tabs.Screen name="profile" />
       <Tabs.Screen name="details" />
-      <Tabs.Screen name="filters" /> 
+      {/*<Tabs.Screen name="filters" /> */}
     </Tabs>
   );
 }

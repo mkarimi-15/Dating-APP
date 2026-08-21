@@ -12,6 +12,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import { Button } from '@/components/ui/Button';
 
+
 export default function FiltersScreen() {
   const [gender, setGender] = useState<'women' | 'men'>('women');
 
@@ -159,7 +160,7 @@ export default function FiltersScreen() {
           <View style={styles.interestsContainer}>
 
             {interests.map((item, index) => {
-              const isSelected =
+              
                 const isSelected = selectedInterest === item;
 
               return (

@@ -16,7 +16,6 @@ export function MoreButton({
   onPress,
   style,
 }: MoreButtonProps) {
-  
   return (
     <TouchableOpacity
       style={[styles.button, style]}
@@ -34,29 +33,13 @@ export function MoreButton({
 
 const styles = StyleSheet.create({
   button: {
-    width: 56,
-    height: 56,
-    borderRadius: 16,
-    borderWidth: 1.5,
+    width: 52,
+    height: 52,
+    borderRadius: 10,
+    borderWidth: 2,
     borderColor: Colors.primary,
-    backgroundColor: 'transparent',
-    alignItems: 'center',
     justifyContent: 'center',
-  },
-  disabled: {
-    opacity: 0.5,
+    alignItems: 'center',
+    backgroundColor: '#F1E7E7',
   },
 });
-//call moreButten:<MoreButton onPress={() => {
- // console.log('More clicked');}} />
- 
-//back and more togheder: 
-//<View style={styles.header}>
-//<BackButton onPress={() => router.back()} />
-//<MoreButton onPress={() => console.log('More')} />
-//</View>
-//header: {
-  //flexDirection: 'row',
-  //justifyContent: 'space-between',
-  //alignItems: 'center',
-  //width: '100%',}

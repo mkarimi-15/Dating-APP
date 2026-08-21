@@ -106,12 +106,12 @@ export default function AboutScreen() {
 
         {/* Keep Going */}
         <View style={styles.buttonContainer}>
-          <Button
-            label="Keep Going"
-            onPress={() => {
-              console.log('Keep Going clicked');
-            }}
-          />
+         <Button
+           label="Keep Going"
+           onPress={() => {
+             router.push('/userProfile');
+           }}
+         />
         </View>
 
       </ScrollView>
